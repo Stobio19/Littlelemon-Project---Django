@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="column">
+    <!-- Step 14: Create for loop -->
+    <p>
+        <!-- Step 14: Add DTL variable for name -->
+        <span class="menu-price">
+            <!-- Step 14: Add DTL variable for price -->
+            {% for item in menu %}
+                <p class='menu-price'><a href="{% url 'menu_item' pk=item.pk %}">{{item.name}}</a> :<span> {{item.price}}.00 $</span></p>
+            {% endfor %}
+        </span>
+    </p>
+    <!-- Step 14: End or loop -->
+</div>
+<!--End col-->
+{% endblock %}
